@@ -1,3 +1,69 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" contentId="sidemenu">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title size="small">Main</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-menu-toggle auto-hide="false">
+        <ion-list lines="none">
+          <ion-item [routerLink]="'/'">
+            <ion-icon name="color-filter" slot="start"></ion-icon>
+            Filter
+          </ion-item>
+
+          <ion-item [routerLink]="'/'">
+            <ion-icon name="layers" slot="start"></ion-icon>
+            Categories
+          </ion-item>
+
+          <ion-item routerLink="todos">
+            <ion-icon name="information-circle" slot="start"></ion-icon>
+            <ion-label>
+              About Us
+            </ion-label>
+          </ion-item>
+         
+        </ion-list>
+      </ion-menu-toggle>
+      
+      <ion-item lines="none" (click)="isRemainder === 1 ? isRemainder = 0 : isRemainder = 1">
+        <ion-icon name="settings" slot="start"></ion-icon>
+        Settings
+        <ion-icon slot="end" [name]="isRemainder? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+      </ion-item>
+
+      <ion-menu-toggle auto-hide="false">
+        <ion-list lines="none">
+          <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
+            [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            <!-- <ion-icon name="document" slot="start"></ion-icon> -->
+            Promotional Code
+          </ion-item>
+
+          <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
+          [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+          <!-- <ion-icon name="car" slot="start"></ion-icon> -->
+          Delivery Information
+        </ion-item>
+
+        <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
+          [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+          <!-- <ion-icon name="card" slot="start"></ion-icon> -->
+          Payment Information
+        </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+
+      <ion-item routerLink="finance">
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        <ion-label>
+          Logout
+        </ion-label>
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="sidemenu"></ion-router-outlet>
 </ion-app>

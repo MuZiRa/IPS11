@@ -1,20 +1,45 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Go Thrifting</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <div><ion-input type="text"><ion-searchbar type="text" placeholder="Search"></ion-searchbar></ion-input></div>
 </ion-content>
+
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="cart">
+      <ion-icon name="cart"></ion-icon>
+      <ion-label>My Cart</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="upload">
+      <ion-icon name="camera"></ion-icon>
+      <ion-label>Upload</ion-label>
+    </ion-tab-button>
+
+  
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="payment">
+      <ion-icon name="card"></ion-icon>
+      <ion-label>Payment</ion-label>
+    </ion-tab-button>
+
+   
+    <ion-tab-button tab="about">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Me</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
