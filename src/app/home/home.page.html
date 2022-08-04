@@ -9,7 +9,17 @@
 
 <ion-content [fullscreen]="true">
   <div><ion-input type="text"><ion-searchbar type="text" placeholder="Search"></ion-searchbar></ion-input></div>
+
+  
+    <ion-card-content class="ion-text-center">
+      <img style="width: 190px; height: 90px; display: inline-block; margin: 25px 10px;" src="../../assets/sport.jpg" alt="">
+      <img style="width: 190px; height: 90px; display: inline-block; margin: 25px 10px;" src="../../assets/sale.jpg" alt="">
+      <img style="width: 190px; height: 90px; display: inline-block; margin: 25px 10px;" src="../../assets/sneakers.webp" alt="">
+    </ion-card-content>
+ 
 </ion-content>
+
+
 
 
 
@@ -21,13 +31,13 @@
     </ion-tab-button>
 
     <ion-tab-button tab="upload">
-      <ion-icon name="camera"></ion-icon>
+      <ion-icon name="camera" [routerLink]="'/upload'"></ion-icon>
       <ion-label>Upload</ion-label>
     </ion-tab-button>
 
   
     <ion-tab-button tab="home">
-      <ion-icon name="home"></ion-icon>
+      <ion-icon name="home" [routerLink]="'/home'"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
@@ -38,8 +48,8 @@
 
    
     <ion-tab-button tab="about">
-      <ion-icon name="person-circle"></ion-icon>
-      <ion-label>Me</ion-label>
+      <ion-icon name="person-circle" [routerLink]="'/profile'"></ion-icon>
+        <ion-label>Me</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

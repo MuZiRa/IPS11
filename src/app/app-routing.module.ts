@@ -10,7 +10,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
+  {
+    path: 'upload',
+    loadChildren: () => import('./upload/upload.module').then( m => m.UploadPageModule)
+  },
+
 ];
 
 @NgModule({
