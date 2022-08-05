@@ -1,9 +1,68 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>dashboard</ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <!-- day box -->
+  <div>
+    <ion-text class="day">Day</ion-text> <br>
+
+    <!-- <ion-text id="day1">30</ion-text>
+    <br>
+    <ion-text id="total1">Total Sales</ion-text> 
+
+     <ion-text id="day2">28</ion-text>
+     <br>
+    <ion-text id="total2">Total Purchases</ion-text> -->
+    
+    <!-- <ion-text id="day3">3 </ion-text>
+    <br>
+    <ion-text id="total3">Total Product</ion-text>  -->
+
+  </div>
+
+  <!-- week box -->
+  <div>
+    <ion-text class="wk">Week</ion-text>
+  </div>
+
+  <!-- month box -->
+  <div>
+    <ion-text class="mth">Month</ion-text>
+  </div>
+
+  <br><br>
+  <br>
+
+  <!-- top selling box -->
+  <ion-text class="tsell">Top Selling Categories</ion-text>
+    <div id="top">
+      <ion-text id="text">Accessories</ion-text>
+      <ion-text class="num1">30%</ion-text>
+    </div>
+
+    <div id="top1">
+      <ion-text id="text">Clothing</ion-text>
+      <ion-text class="num2">20%</ion-text>
+    </div>
+
+    <div id="top2">
+      <ion-text id="text">Pants</ion-text>
+      <ion-text class="num3">20%</ion-text>
+    </div>
+
+    <div id="top3">
+      <ion-text id="text">Shoes</ion-text>
+      <ion-text class="num4">10%</ion-text>
+    </div>
+      
 
 </ion-content>
