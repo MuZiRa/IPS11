@@ -1,69 +1,65 @@
 <ion-app>
-  <ion-menu side="start" contentId="sidemenu">
-    <ion-header>
+  <!--will be the side bar menu-->
+  <ion-menu menuId="main-menu" content-id="main"> <!--create menu id here-->
+    <ion-header> <!--header start-->
       <ion-toolbar>
-        <ion-title size="small">Main</ion-title>
-      </ion-toolbar>
-    </ion-header>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar> 
+    </ion-header> <!--header end-->
 
-    <ion-content>
-      <ion-menu-toggle auto-hide="false">
-        <ion-list lines="none">
-          <ion-item [routerLink]="'/'">
-            <ion-icon name="color-filter" slot="start"></ion-icon>
-            Filter
+    <ion-content> <!--content start-->
+      <!--create list-->
+      <ion-list lines="none">
+        <ion-item> <!--item 1-->
+          <ion-icon name="options-outline" slot="start"></ion-icon>
+          <ion-label (click)="toFilter()">Filter</ion-label>
+        </ion-item>
+
+        <ion-item> <!--item 2-->
+          <ion-icon name="layers" slot="start"></ion-icon>
+          <ion-label (click)="toCategories()">Categories</ion-label>
+        </ion-item>
+
+        <ion-item> <!--item 3-->
+          <ion-icon name="code-outline" slot="start"></ion-icon>
+          <ion-label (click)="aboutUs()">About Us</ion-label>
+        </ion-item>
+
+        <!--item 4-->
+        <ion-item lines="none" (click)="isRemainder === 1 ? isRemainder = 0 : isRemainder = 1">
+          <ion-icon name="settings-outline" slot="start"></ion-icon>
+          Settings
+          <ion-icon slot="end" [name]="isRemainder? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+        </ion-item>
+  
+        <ion-menu-toggle auto-hide="false">
+          <ion-list lines="none">
+            <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
+              [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+              <ion-text>Promotional Code</ion-text>
+              <ion-icon name="chevron-forward-outline" id="setting1"></ion-icon>
+            </ion-item>
+  
+            <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
+            [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
+            Delivery Information
+            <ion-icon name="chevron-forward-outline" id="setting2"></ion-icon>
           </ion-item>
-
-          <ion-item [routerLink]="'/'">
-            <ion-icon name="layers" slot="start"></ion-icon>
-            Categories
-          </ion-item>
-
-          <ion-item routerLink="todos">
-            <ion-icon name="information-circle" slot="start"></ion-icon>
-            <ion-label>
-              About Us
-            </ion-label>
-          </ion-item>
-         
-        </ion-list>
-      </ion-menu-toggle>
-      
-      <ion-item lines="none" (click)="isRemainder === 1 ? isRemainder = 0 : isRemainder = 1">
-        <ion-icon name="settings" slot="start"></ion-icon>
-        Settings
-        <ion-icon slot="end" [name]="isRemainder? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
-      </ion-item>
-
-      <ion-menu-toggle auto-hide="false">
-        <ion-list lines="none">
+  
           <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
             [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
-            <!-- <ion-icon name="document" slot="start"></ion-icon> -->
-            Promotional Code
+            Payment Information
+            <ion-icon name="chevron-forward-outline" id="setting3"></ion-icon>
           </ion-item>
+          </ion-list>
+        </ion-menu-toggle>
 
-          <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
-          [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
-          <!-- <ion-icon name="car" slot="start"></ion-icon> -->
-          Delivery Information
+        <ion-item> <!--item 5-->
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label (click)="logout()">Log Out</ion-label>
         </ion-item>
-
-        <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
-          [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
-          <!-- <ion-icon name="card" slot="start"></ion-icon> -->
-          Payment Information
-        </ion-item>
-        </ion-list>
-      </ion-menu-toggle>
-
-      <ion-item routerLink="finance">
-        <ion-icon name="log-out" slot="start"></ion-icon>
-        <ion-label>
-          Logout
-        </ion-label>
-      </ion-item>
-    </ion-content>
+      </ion-list>
+    </ion-content> <!--content end-->
   </ion-menu>
-  <ion-router-outlet id="sidemenu"></ion-router-outlet>
+  <ion-router-outlet id="main"></ion-router-outlet> <!--create id here-->
 </ion-app>
