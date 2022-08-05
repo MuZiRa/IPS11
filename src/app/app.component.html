@@ -28,7 +28,7 @@
         <!--item 4-->
         <ion-item lines="none" (click)="isRemainder === 1 ? isRemainder = 0 : isRemainder = 1">
           <ion-icon name="settings-outline" slot="start"></ion-icon>
-          Settings
+          <ion-label (click)="settings()">Settings</ion-label>
           <ion-icon slot="end" [name]="isRemainder? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
         </ion-item>
   
@@ -36,20 +36,23 @@
           <ion-list lines="none">
             <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
               [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
-              <ion-text>Promotional Code</ion-text>
-              <ion-icon name="chevron-forward-outline" id="setting1"></ion-icon>
+              Promotional Code
+              <!-- guna when creating settings page -->
+              <!-- <ion-icon name="chevron-forward-outline" id="setting1"></ion-icon> -->
             </ion-item>
   
             <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
             [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
-            Delivery Information
-            <ion-icon name="chevron-forward-outline" id="setting2"></ion-icon>
+           Delivery Information
+           <!-- guna when creating settings page -->
+            <!-- <ion-icon name="chevron-forward-outline" id="setting2"></ion-icon> -->
           </ion-item>
   
           <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
             [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
             Payment Information
-            <ion-icon name="chevron-forward-outline" id="setting3"></ion-icon>
+            <!-- guna when creating settings page -->
+            <!-- <ion-icon name="chevron-forward-outline" id="setting3"></ion-icon>  -->
           </ion-item>
           </ion-list>
         </ion-menu-toggle>
