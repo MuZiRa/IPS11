@@ -1,3 +1,4 @@
+<br>
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -6,18 +7,63 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <!-- welcome -->
-
-  <div>
     <ion-text>
       <h1>Welcome, Admin!</h1>
     </ion-text>
-  </div>
 
-  <!--7 cards -->
+    <br>
 
+ <!-- cards -->
+ <ion-card>
+  <ion-item href="/dashboard" class="ion-activated">
+    <ion-icon name="bar-chart-outline" slot="start"></ion-icon>
+    <ion-label>Dashboard</ion-label>
+  </ion-item>
+</ion-card>
 
+ <ion-card>
+  <ion-item href="/product" class="ion-activated">
+    <ion-icon name="shirt-outline" slot="start"></ion-icon>
+    <ion-label>Product</ion-label>
+  </ion-item>
+</ion-card>
+
+  <ion-card>
+    <ion-item href="/seller" class="ion-activated">
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      <ion-label>Sellers</ion-label>
+    </ion-item>
+  </ion-card>
+
+ <ion-card>
+  <ion-item href="/orders" class="ion-activated">
+    <ion-icon name="bag-remove-outline" slot="start"></ion-icon>
+    <ion-label>Orders</ion-label>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item href="/shipments" class="ion-activated">
+    <ion-icon name="rocket-outline" slot="start"></ion-icon>
+    <ion-label>Shipments</ion-label>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item href="/reviews" class="ion-activated">
+    <ion-icon name="happy-outline" slot="start"></ion-icon>
+    <ion-label>Reviews</ion-label>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item href="/invoice" class="ion-activated">
+    <ion-icon name="newspaper-outline" slot="start"></ion-icon>
+    <ion-label>Invoice</ion-label>
+  </ion-item>
+</ion-card>
 
 
 </ion-content>
