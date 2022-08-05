@@ -44,8 +44,8 @@ export class AdminPage implements OnInit {
     }
 
      //when navigate to invoice page
-     toInovice(){
-      this.router.navigateByUrl('/invoice');
+     toInvoice(){
+      this.router.navigateByUrl('/admin/invoice');
     }
     
 
