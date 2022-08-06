@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { menuController } from '@ionic/core';
 
 @Component({
@@ -8,7 +9,14 @@ import { menuController } from '@ionic/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+    menu: MenuController) {}
+
+    // if(this.usertype = "Admin" ){
+    //   this.menu.enable(true, 'main-menu1'); 
+    //  }else{
+    //   this.menu.enable(true, 'main'); 
+    //  }  
 
     //when navigate to filter page
     toFilter(){
