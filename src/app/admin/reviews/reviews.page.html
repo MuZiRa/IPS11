@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>reviews</ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+      <ion-back-button defaultHref="/admin"></ion-back-button> <!-- go back to admin page -->
+    </ion-button>
+    </ion-buttons>
+    <ion-title>Reviews</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <!-- comments and uploading item segment-->
+  <ion-segment (ionChange)="onFilterUpdate($event)">  <!-- taken from user -->
+    <ion-segment-button value="comments"> Comments </ion-segment-button>
+
+    <ion-segment-button value="upload"> Uploading Item</ion-segment-button>
+  </ion-segment>
 
 </ion-content>
