@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-product',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.page.scss'],
 })
 export class ProductPage implements OnInit {
+
+  loadedBookings: Product[];
+  private bookingSub: Subscription;
 
   constructor() { }
 
