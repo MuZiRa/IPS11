@@ -18,10 +18,10 @@ export class AppComponent {
     //   this.menu.enable(true, 'main'); 
     //  }  
 
-    //when navigate to home page
-    toHome(){
+    //when navigate to filter page
+    toFilter(){
       menuController.toggle();
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/filter');
     }
   
     //when navigate to categories page
