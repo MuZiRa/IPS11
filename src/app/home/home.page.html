@@ -7,18 +7,82 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div><ion-input type="text"><ion-searchbar type="text" placeholder="Search"></ion-searchbar></ion-input></div>
+<ion-content >
+
+
+    <ion-searchbar  type="text" placeholder="Search" animated="true"></ion-searchbar>
+
+  <ion-slides [options]="option" class="ion-margin-top">
+    <ion-slide>
+      <ion-card>
+        <img  src="../../assets/sports.jpg" alt="">
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide>
+      <ion-card>
+        <img  src="../../assets/discount.jpg" alt="">
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide>
+      <ion-card>
+        <img  src="../../assets/sneakers.webp" alt="">
+      </ion-card>
+    </ion-slide>    
+      </ion-slides><br><br>
+
+      <h4 class="ion-text-center">CATEGORIES</h4>
+     
+
+    <div class="middleBox">
+      <div class="first">
+        <button>
+          <img  src="../../assets/apparel.jpg" alt="">
+          <p>Apparels</p>
+        </button>  
+        </div>
+
+        <div class="second">
+          <button>
+            <img   src="../../assets/pants.jpg" alt="">
+            <p>Pants</p>
+          </button>
+      </div>
+
+      <div class="forth">
+        <button>
+          <img   src="../../assets/accessories.jpg" alt="">
+          <p>Accessories</p>
+        </button>   
+    </div>
+     
+    </div>
+
+    <div class="middleBox">
+      <div class="third">
+        <button>
+          <img   src="../../assets/shoe.jpg" alt="">
+          <p>Shoes</p>
+        </button>   
+    </div>
+
+    <div class="forth">
+      <button>
+        <img   src="../../assets/bags.jpg" alt="">
+        <p>Bags</p>
+      </button>   
+  </div>
 
   
-    <ion-card-content class="ion-text-center">
-      <img style="width: 190px; height: 90px; display: inline-block; margin: 25px 10px;" src="../../assets/sport.jpg" alt="">
-      <img style="width: 190px; height: 90px; display: inline-block; margin: 25px 10px;" src="../../assets/sale.jpg" alt="">
-      <img style="width: 190px; height: 90px; display: inline-block; margin: 25px 10px;" src="../../assets/sneakers.webp" alt="">
-    </ion-card-content>
+    </div>
+  
+
+</ion-content>
+
+  
 
 
-<ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="cart">
       <ion-icon name="cart"></ion-icon>
@@ -26,8 +90,8 @@
     </ion-tab-button>
 
     <ion-tab-button tab="upload">
-      <ion-icon name="camera" [routerLink]="'/upload'"></ion-icon>
-      <ion-label>Upload</ion-label>
+      <ion-icon name="heart" [routerLink]="'/upload'"></ion-icon>
+      <ion-label>Wishlist</ion-label>
     </ion-tab-button>
 
   
@@ -37,7 +101,7 @@
     </ion-tab-button>
 
     <ion-tab-button tab="payment">
-      <ion-icon name="card"></ion-icon>
+      <ion-icon name="card" [routerLink]="'/payment'"></ion-icon>
       <ion-label>Payment</ion-label>
     </ion-tab-button>
 
@@ -47,6 +111,3 @@
         <ion-label>Me</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-</ion-tabs>
-
-</ion-content>

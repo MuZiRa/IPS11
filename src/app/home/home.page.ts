@@ -9,6 +9,18 @@ export class HomePage {
 
   constructor() {}
 
-  
+  option ={
+    
+    
+    initialSlide: 1,
+        speed: 800,
+        loop: true,
+        autoplay: {
+              delay: 4000
+        }
+      }
+     
+    }
+    
 
-}
+

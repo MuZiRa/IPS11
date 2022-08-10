@@ -12,13 +12,46 @@
   <ion-card no-margin>
     <ion-card-content class="bg-profile ion-text-center">
       <img width="100" height="100" src="../../assets/profile.png">
-      <h1 class="fw500">FarahAmaniThrift</h1>
-      <h2 color="light" margin-bottom>FarahAmaniThrift@gmail.com</h2>
+      <h1 class="fw500">Syasya</h1>
+      <h2 color="light" margin-bottom>Syasya@gmail.com</h2>
+      
       <ion-button icon-left color="secondary" [routerLink]="'/profile/edit-profile'">
-       Edit Account
-      </ion-button>
+        Edit Account
+       </ion-button>
+      <ion-button icon-left color="secondary" [routerLink]="'/profile/edit-profile'">
+        Change Password
+       </ion-button>
+     
+      <ion-card>
+      <ion-footer>
+        <ion-row>
+          <ion-col center text-center>
+            <button>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>My Order</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <button>
+              <ion-icon name="text"></ion-icon>
+              <div>Wishlist</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <button [routerLink]="'/setting'">
+              <ion-icon name="settings"></ion-icon>
+              <div>Settings</div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-footer>
+    </ion-card>
+
+    
     </ion-card-content>
 
+
+    
   
     <ion-grid fixed no-padding>
       <ion-row>
@@ -31,67 +64,33 @@
 
             <ion-item>
               <ion-label color="dark" position="stacked">Username:</ion-label>
-              <ion-input inputmode="text" placeholder="Your login username" value="FarahAmaniThrift"></ion-input>
+              <ion-input inputmode="text" placeholder="Your login username" value="Syasya"></ion-input>
             </ion-item>
     
             <ion-item>
               <ion-label color="dark" position="stacked">Email:</ion-label>
-              <ion-input inputmode="email" placeholder="Your Email Login" value="FarahAmaniThrift@gmail.com"></ion-input>
+              <ion-input inputmode="email" placeholder="Your Email Login" value="syasya@gmail.com"></ion-input>
             </ion-item>
     
             <ion-item>
               <ion-label color="dark" position="stacked">Phone Number:</ion-label>
               <ion-input inputmode="number" placeholder="Your Phone Login Number" value="8966704
               "></ion-input>
+              
             </ion-item>
 
-            <ion-item>
-              <ion-label color="dark" position="stacked">Account Number:</ion-label>
-              <ion-input inputmode="number" placeholder="Your Account Number" value="0000XXXXXX (BIBD)"></ion-input>
-            </ion-item>
-
-            <ion-item>
-              <ion-label color="dark" position="stacked">Location:</ion-label>
-              <ion-input inputmode="text" placeholder="My Location Area" value="Brunei Muara
-              "></ion-input>
-            </ion-item>
           </ion-list>            
 
-          <ion-list>
-            <!-- <ion-radio-group> -->
-              <ion-list-header color="light">
-                <ion-label class="fw700 ion-text-center">MY ITEMS</ion-label>
-              </ion-list-header><br>
-
-                <table style="width:100%">
-                  <tr>
-                     <td><img width="80" height="100" src="../../assets/jeans.webp"></td>
-                     <td>Name<h4>High Waist Straight Leg Jeans</h4></td>
-                     <td>Price<h4>$9</h4></td>
-                     <td>Size<h4>M</h4></td>
-                     <td>Color<h4>Light Wash, Black</h4></td>
-                     <td>Availability<h4>1</h4></td>
-                     <td>Condition<h4>8/10</h4></td>
-                     <td><ion-icon name="trash"></ion-icon></td>
-                  </tr>
-                 </table>
-          </ion-list>
-          <ion-grid class="ion-text-center">
-            <ion-button icon-left color="secondary" [routerLink]="'/upload'">Add Item</ion-button>
-          </ion-grid>
-
-          <ion-list margin-bottom>
-            <ion-list-header color="light">
-              <ion-label class="fw700 ion-text-center">COMMENTS</ion-label>
-            </ion-list-header>
-            </ion-list>
+          
         </ion-col>
       </ion-row>
     </ion-grid>
   </ion-card>
 
+ 
   
-</ion-content>
+  
+</ion-content >
 
 
   <ion-tab-bar slot="bottom">
@@ -101,8 +100,8 @@
     </ion-tab-button>
 
     <ion-tab-button tab="upload">
-      <ion-icon name="camera" [routerLink]="'/upload'"></ion-icon>
-      <ion-label>Upload</ion-label>
+      <ion-icon name="heart" [routerLink]="'/upload'"></ion-icon>
+      <ion-label>Wishlist</ion-label>
     </ion-tab-button>
 
   
@@ -112,7 +111,7 @@
     </ion-tab-button>
 
     <ion-tab-button tab="payment">
-      <ion-icon name="card"></ion-icon>
+      <ion-icon name="card" [routerLink]="'/payment'"></ion-icon>
       <ion-label>Payment</ion-label>
     </ion-tab-button>
 

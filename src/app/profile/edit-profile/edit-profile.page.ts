@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController, LoadingController, NavController, ToastController } from '@ionic/angular';
+import { Camera, CameraResultType, CameraSource, ImageOptions } from "@capacitor/camera";
 
 @Component({
   selector: 'app-edit-profile',
@@ -8,38 +9,54 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class EditProfilePage implements OnInit {
 
+  base64:string="";
+
   constructor(private alertCtrl: AlertController,
-    private navCtrl: NavController) { }
+    private navCtrl: NavController,
+   
+    
+    public loadingCtrl: LoadingController,
+    public toastCtrl: ToastController) { }
 
   ngOnInit() {
+    Camera.requestPermissions({permissions:['photos']})
   }
 
-  async showPrompt() {
-    const alert = await this.alertCtrl.create({
-      header: "Confirm",
-      message: "Are You Confirm?",
-      buttons: [
-        {
-          text: "Cancel",
-          role: "cancel",
-          handler: () => {
-            console.log("Cancel the form");
-            this.navCtrl.navigateRoot('/profile/edit-profile'); 
-          },
-        },
-        {
-          text: "Okay",
-          handler: () => {
-            console.log("Submit the form");
-            this.navCtrl.navigateRoot('/profile'); 
-          },
-        },
-      ],
+  pickImageFromGallery(){
+    var options: ImageOptions={
+      source: CameraSource.Photos,
+      resultType:CameraResultType.DataUrl
+
+    }
+    Camera.getPhoto(options).then((result)=>{
+      this.base64 = result.dataUrl;
+    },(err)=>{
+      alert(err);
+    })
+  }
+
+  async onEditProfile() {
+    const loader = await this.loadingCtrl.create({
+      duration: 2000
     });
-  
-    await alert.present();
+
+    loader.present();
+    loader.onWillDismiss().then(async l => {
+      const toast = await this.toastCtrl.create({
+        
+        cssClass: 'bg-profile',
+        message: 'Your Data was Edited!',
+        duration: 3000,
+        position: 'bottom'
+        
+      });
+
+      toast.present();
+      this.navCtrl.navigateForward('/profile');
+    });
   }
 
+  
   
 
 }
