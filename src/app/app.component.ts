@@ -36,12 +36,6 @@ export class AppComponent {
       this.router.navigateByUrl('/about');
     }
 
-   //when navigate to settings page
-   settings(){
-    menuController.toggle();
-    this.router.navigateByUrl('/settings');
-  }
-
     //when user enter logout from sidebar
     logout(){
       
