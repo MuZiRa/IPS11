@@ -11,9 +11,9 @@ export class AboutPage implements OnInit {
   constructor(private router: Router) { }
 
   // to navigate back to home page
-  backHome(){
-    this.router.navigateByUrl('/home');
-  }
+  // backHome(){
+  //   this.router.navigateByUrl('/home');
+  // }
 
   ngOnInit() {
   }
