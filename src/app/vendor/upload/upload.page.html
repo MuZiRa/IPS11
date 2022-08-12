@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header><br>
+
+<ion-content>
+  <h3 class="ion-text-center">Upload Your Item(s) Here</h3>
+
+    <!-- camera function should be here -->
+  <ion-grid class="ion-text-center">
+    <ion-icon name="image"></ion-icon>
+  </ion-grid>
+
+  <ion-item>
+    <ion-label color="dark" position="stacked">Item Name:</ion-label>
+    <ion-input inputmode="text" placeholder="Name of item"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark" position="stacked">Item Price:</ion-label>
+    <ion-input inputmode="number" placeholder="Item Price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark" position="stacked">Item Color:</ion-label>
+    <ion-input inputmode="text" placeholder="Color"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark" position="stacked">Item Size:</ion-label>
+    <ion-input inputmode="text" placeholder="Size"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark" position="stacked">Item Availability:</ion-label>
+    <ion-input inputmode="text" placeholder="Availability"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark" position="stacked">Item Condition:</ion-label>
+    <ion-input inputmode="text" placeholder="Condition"></ion-input>
+  </ion-item>
+
+  <ion-grid class="ion-text-center">
+    <ion-button icon-left color="secondary" (click)="showPrompt()" [routerLink]="'/upload'">Done</ion-button>
+  </ion-grid>
+</ion-content>
+ 
