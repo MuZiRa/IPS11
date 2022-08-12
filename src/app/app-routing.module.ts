@@ -15,20 +15,25 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
-  {
-    path: 'upload',
-    loadChildren: () => import('./upload/upload.module').then( m => m.UploadPageModule)
-  },
+  // {
+  //   path: 'upload',
+  //   loadChildren: () => import('./upload/upload.module').then( m => m.UploadPageModule)
+  // },
   {
     path: 'about',
     loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
-  },  {
+  },
+  {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
   {
     path: 'index',
     loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
+  },
+  {
+    path: 'vendor',
+    loadChildren: () => import('./vendor/vendor.module').then( m => m.VendorPageModule)
   },
 
 
