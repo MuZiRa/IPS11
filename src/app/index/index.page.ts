@@ -11,7 +11,7 @@ export class IndexPage implements OnInit {
   constructor(private router: Router) { }
 
   nextPage(){
-    this.router.navigate(['/home']);
+    this.router.navigateByUrl('/home');
   }
 
   ngOnInit() {
