@@ -11,7 +11,7 @@ export class SellersPage implements OnInit {
     //mock data for seller
     sellers: any = [
       {
-        "username": "Noor Aiman",
+        "username": "Noor Naim",
         "potrait": "assets/potraits/pro2.png",
         "company": "EcoThrifty Company"
       },
