@@ -22,31 +22,6 @@
           <ion-label>Settings</ion-label>
           <ion-icon slot="end" [name]="isRemainder? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
         </ion-item>
-  
-        <ion-menu-toggle auto-hide="false">
-          <ion-list lines="none">
-            <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
-              [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
-              Promotional Code
-              <!-- guna when creating settings page -->
-              <ion-icon name="chevron-forward-outline" id="setting1"></ion-icon>
-            </ion-item>
-  
-            <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
-            [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
-           Delivery Information
-           <!-- guna when creating settings page -->
-            <ion-icon name="chevron-forward-outline" id="setting2"></ion-icon>
-          </ion-item>
-  
-          <ion-item menuclose [hidden]="!isRemainder" [routerLink]="['/notifications']"
-            [queryParams]="{ type: 'birthday' }" menuClose class="sub-menu">
-            Payment Information
-            <!-- guna when creating settings page -->
-            <ion-icon name="chevron-forward-outline" id="setting3"></ion-icon> 
-          </ion-item>
-          </ion-list>
-        </ion-menu-toggle>
 
         <ion-item> <!--item 3-->
           <ion-icon name="log-out-outline" slot="start"></ion-icon>
