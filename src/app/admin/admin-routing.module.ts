@@ -17,10 +17,6 @@ const routes: Routes = [
     loadChildren: () => import('./orders/orders.module').then( m => m.OrdersPageModule)
   },
   {
-    path: 'sellers',
-    loadChildren: () => import('./sellers/sellers.module').then( m => m.SellersPageModule)
-  },
-  {
     path: 'product',
     loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   },
@@ -35,6 +31,10 @@ const routes: Routes = [
   {
     path: 'invoice',
     loadChildren: () => import('./invoice/invoice.module').then( m => m.InvoicePageModule)
+  },
+  {
+    path: 'vendors',
+    loadChildren: () => import('./vendors/vendors.module').then( m => m.VendorsPageModule)
   }
 ];
 
