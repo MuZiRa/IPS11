@@ -22,10 +22,10 @@ export class AdminPage implements OnInit {
         this.router.navigateByUrl('/admin/product');
       }
   
-    //when navigate to sellers page
-      toSeller(){
+    //when navigate to vendors page
+      toVendor(){
 
-        this.router.navigateByUrl('/admin/sellers');
+        this.router.navigateByUrl('/admin/vendors');
       }
   
      //when navigate to orders page
@@ -41,11 +41,6 @@ export class AdminPage implements OnInit {
      //when navigate to reviews page
       toReviews(){
       this.router.navigateByUrl('/admin/reviews');
-    }
-
-     //when navigate to invoice page
-     toInvoice(){
-      this.router.navigateByUrl('/admin/invoice');
     }
     
 
