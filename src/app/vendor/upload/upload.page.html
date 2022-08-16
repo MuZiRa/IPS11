@@ -14,6 +14,18 @@
     <ion-icon name="image"></ion-icon>
   </ion-grid>
 
+<ion-grid class="ion-text-center">
+  <ion-row>
+      <ion-col>
+        <ion-button class="ion-text-start" icon-left color="secondary" [routerLink]="'/upload'">Select Image</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="ion-text-end" icon-left color="secondary" [routerLink]="'/upload'">Remove Image</ion-button>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+  
+
   <ion-item>
     <ion-label color="dark" position="stacked">Item Name:</ion-label>
     <ion-input inputmode="text" placeholder="Name of item"></ion-input>
