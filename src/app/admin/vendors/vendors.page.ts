@@ -1,63 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { AngularFirestore } from '@angular/fire/compat/firestore/'; 
 
 @Component({
   selector: 'app-vendors',
   templateUrl: './vendors.page.html',
   styleUrls: ['./vendors.page.scss'],
 })
-export class VendorsPage implements OnInit {
+export class VendorsPage {
 
-    //mock data for seller
-    vendors: any = [
-      {
-        "username": "Noor Naim",
-        "potrait": "assets/potraits/pro2.png",
-        "company": "EcoThrifty Company"
-      },
-      {
-        "username": "Farah Amani",
-        "potrait": "assets/potraits/pro5.png",
-        "company": "DeThrift Company"
-      },
-      {
-        "username": "Siti Ropeah",
-        "potrait": "assets/potraits/pro4.png",
-        "company": "KlothThrift Company"
-      },
-      {
-        "username": "Abdul Aziz",
-        "potrait": "assets/potraits/pro3.png",
-        "company": "LocalThrift Company"
-      },
-      {
-        "username": "Ahmad Azim",
-        "potrait": "assets/potraits/pro7.png",
-        "company": "ThriftTah Company"
-      },
-    ];
+  public listOfVendors: any[];
+  public loadedListVendors: any[];
 
-  listOfVendors: any;
 
-  constructor(public navCtrl: NavController) {
-              this.listOfVendors = this.vendors;
-   }
-
-      //to filter vendors by username 
-      searchSeller(ev: any) {
-        let val = ev.target.value;
-      
-        if (val && val.trim() !== '') {
-          this.listOfVendors = this.vendors.filter((seller) => {
-            return seller.username.toLowerCase().includes(val.toLowerCase());
-          });
-        } else {
-          this.listOfVendors = this.vendors;
-        }
-        }
+  constructor(private firestore: AngularFirestore) { }
 
   ngOnInit() {
+    this.firestore.collection(`vendor`).valueChanges().subscribe(listOfVendors => {
+      this.listOfVendors = listOfVendors;
+      this.loadedListVendors = listOfVendors;
+    });
   }
+
+  initializeItems(): void {
+    this.listOfVendors = this.loadedListVendors;
+  }
+
+  //filter searchbar
+  searchVendor(evt) {
+    this.initializeItems();
+
+    const searchTerm = evt.srcElement.value;
+
+    if(!searchTerm){
+      return;
+    }
+
+  this.listOfVendors = this.listOfVendors.filter(currentList => {
+    if(currentList.vendorName && searchTerm) {
+      if(currentList.vendorName.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1){
+        return true;
+      }
+      return false;
+    }
+  });
+
+ }
 
 
 
