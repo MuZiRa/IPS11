@@ -18,26 +18,12 @@
  <!-- cards -->
  <ion-card>
   <ion-item class="ion-activated">
-    <ion-icon name="bar-chart-outline" slot="start"></ion-icon>
-    <ion-label (click)="toDash()">Dashboard</ion-label>
-  </ion-item>
-</ion-card>
-
- <ion-card>
-  <ion-item class="ion-activated">
     <ion-icon name="shirt-outline" slot="start"></ion-icon>
     <ion-label (click)="toProduct()">Product</ion-label>
   </ion-item>
 </ion-card>
 
-  <ion-card>
-    <ion-item class="ion-activated">
-      <ion-icon name="people-outline" slot="start"></ion-icon>
-      <ion-label (click)="toVendor()">Vendors</ion-label>
-    </ion-item>
-  </ion-card>
-
- <ion-card>
+<ion-card>
   <ion-item class="ion-activated">
     <ion-icon name="bag-remove-outline" slot="start"></ion-icon>
     <ion-label (click)="toOrder()">Orders</ion-label>
@@ -51,10 +37,24 @@
   </ion-item>
 </ion-card>
 
+  <ion-card>
+    <ion-item class="ion-activated">
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      <ion-label (click)="toVendor()">Vendors</ion-label>
+    </ion-item>
+  </ion-card>
+
 <ion-card>
   <ion-item class="ion-activated">
     <ion-icon name="happy-outline" slot="start"></ion-icon>
     <ion-label (click)="toReviews()">Reviews</ion-label>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item class="ion-activated">
+    <ion-icon name="chatbox-ellipses-outline" slot="start"></ion-icon>
+    <ion-label (click)="toDash()">Customer Support</ion-label>
   </ion-item>
 </ion-card>
 
